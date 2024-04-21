@@ -18,8 +18,10 @@ body{
     justify-content: center;
     min-height: 100vh;
     background-image: url("./images/pattern-curve.svg");
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: bottom;
+    font-family: "Inter", sans-serif;
 }
 
 main{
@@ -28,13 +30,7 @@ main{
     max-width: 800px;
 }
 
-.img{
-    position: relative;
- 
-    z-index: 2;
-    width: 100%;
-    max-width: 300px;
-}
+
 
 .background{
     width: 100%;
@@ -49,13 +45,17 @@ main{
     z-index: 0;
 }
 
-
+.img{
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 300px;
+}
 
 img{
     position: relative;
     z-index: 3;
     max-width: 200px;
-   
     object-fit: cover;
     margin-block: 1rem;
     box-shadow: 0px 10px 20px var(--grayish-blue);
@@ -79,8 +79,28 @@ article{
 
 .text{
     width: 100%;
-    max-width: 300px;
+    max-width: 430px;
+    margin-top: 2rem;
+    background-image: url("./images/pattern-quotes.svg");
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: 50px;
+    padding-top: .5rem;
+    color: var(--dark-blue);
+    line-height: 1.5;
+    font-size: 1.1em;
 }
+
+h2{
+    font-size: 1em;
+    margin-bottom: 0;
+}
+
+.text p:last-child{
+    margin-top: 0;
+    color: var(--grayish-blue);
+}
+
 
 article:not(.active) {
     transform: translateX(-100%);
@@ -88,14 +108,23 @@ article:not(.active) {
 }
 
 button{
-    background-color: brown;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+   
 }
 
 
 .btn{
     position: absolute;
-    bottom: -10px;
+    bottom: 10px;
+    right: 120px;
     z-index: 3;
+    background-color: white;
+    box-shadow: 1px 1px 5px var(--grayish-blue);
+    border-radius: 30px;
+    padding: .3rem .5rem;
+
 }
 
 @keyframes next1{
@@ -135,3 +164,45 @@ button{
         transform: translateX(0%) ;
     }
 }
+
+@media (min-width: 700px) {
+    article{
+        display: flex;
+        flex-direction: row-reverse;
+        text-align: left;
+    }
+
+    .text{
+        margin-right: -30px;
+        z-index: 3;
+        background-image: url("./images/pattern-quotes.svg");
+        background-position: top left 47px;
+        background-size: 60px;
+    }
+    .img{
+        max-width: 500px;
+        padding: 1.5rem;
+    }
+    
+    img{
+        max-width: 300px;
+    }
+
+    .background{
+        background-size:contain;
+        background-position: center;
+        position: absolute;
+         top: 0px;
+         left: -10px;
+    }
+
+    .btn{
+        position: absolute;
+        bottom: 30px;
+        left: 60px ;
+        right: 0px ;
+        width: fit-content;
+    
+    }
+    
+  }
